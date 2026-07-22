@@ -1,0 +1,111 @@
+[
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist"
+    ],
+    "target_district": "武陵源区",
+    "target_community": null,
+    "id": 1,
+    "sender_id": 2,
+    "sender_role": "county_admin",
+    "priority": "county",
+    "created_at": "2026-05-28T21:10:41"
+  },
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist"
+    ],
+    "target_district": "武陵源区",
+    "target_community": "标志门社区",
+    "id": 2,
+    "sender_id": 3,
+    "sender_role": "community_admin",
+    "priority": "community",
+    "created_at": "2026-05-28T21:11:03"
+  },
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist"
+    ],
+    "target_district": null,
+    "target_community": null,
+    "id": 3,
+    "sender_id": 5,
+    "sender_role": "city_admin",
+    "priority": "city",
+    "created_at": "2026-05-30T17:40:28"
+  },
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist"
+    ],
+    "target_district": "武陵源区",
+    "target_community": "标志门社区",
+    "id": 4,
+    "sender_id": 3,
+    "sender_role": "community_admin",
+    "priority": "community",
+    "created_at": "2026-05-30T17:40:57"
+  },
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist",
+      "community_admin",
+      "county_admin"
+    ],
+    "target_district": null,
+    "target_community": null,
+    "id": 5,
+    "sender_id": 5,
+    "sender_role": "city_admin",
+    "priority": "city",
+    "created_at": "2026-05-30T17:55:55"
+  },
+  {
+    "title": "强降雨避险调度通知",
+    "content": "请立即关注最新雨情，远离溪谷、陡坡和临崖路段，按工作人员指引前往安全区域。",
+    "target_roles": [
+      "resident",
+      "tourist"
+    ],
+    "target_district": "武陵源区",
+    "target_community": null,
+    "id": 6,
+    "sender_id": 2,
+    "sender_role": "county_admin",
+    "priority": "county",
+    "created_at": "2026-05-30T17:56:56"
+  },
+  {
+    "title": "应急调度通知",
+    "content": "请关注最新预警信息，远离临崖、临水和低洼区域，服从现场工作人员指引。",
+    "target_roles": [
+      "resident",
+      "tourist",
+      "community_admin",
+      "county_admin"
+    ],
+    "target_district": null,
+    "target_community": null,
+    "id": 7,
+    "sender_id": 1,
+    "sender_role": "city_admin",
+    "priority": "city",
+    "created_at": "2026-05-31T14:42:02"
+  }
+]

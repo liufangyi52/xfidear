@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="panel">
+    <text class="eyebrow">个人信息</text>
+    <text class="section-title">{{user.username || '未登录'}}</text>
+    <text class="meta">身份：{{roleLabel}}</text>
+    <text class="meta">当前区县：{{locationScope.district || '未定位'}}</text>
+    <text class="meta">当前位置：{{locationScope.scenic_area || '未定位'}}</text>
+    <button class="ghost-button action-button" bindtap="updateLocation">更新当前位置</button>
+  </view>
+
+  <view class="panel">
+    <text class="eyebrow">账号</text>
+    <text class="section-title">账号操作</text>
+    <button class="danger-button action-button" bindtap="logout">退出登录</button>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Local data and runtime state
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+runtime/
+
+# Dependency and generated directories
+node_modules/
+dist/
+Xfplus/frontend/node_modules/
+Xfplus/frontend/dist/
+Xfplus/portable_runtime/
+
+# Local tool state
+.codex-temp/
+.agents/
+.codex/

@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/risk/risk",
+    "pages/report/report",
+    "pages/messages/messages",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "智瞳居民应急平台",
+    "navigationBarBackgroundColor": "#1677d2",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#edf6ff"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于上报险情或SOS时定位现场位置"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "tabBar": {
+    "color": "#6b7d92",
+    "selectedColor": "#1677d2",
+    "backgroundColor": "#f8fbff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/risk/risk",
+        "text": "风险"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "上报"
+      },
+      {
+        "pagePath": "pages/messages/messages",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
+      }
+    ]
+  }
+}

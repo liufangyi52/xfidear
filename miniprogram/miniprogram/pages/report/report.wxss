@@ -1,0 +1,172 @@
+.section-title,
+.card-title {
+  color: #10233c;
+  display: block;
+  font-weight: 800;
+}
+
+.section-title {
+  font-size: 32rpx;
+  line-height: 1.35;
+  margin-bottom: 10rpx;
+}
+
+.report-panel {
+  padding-bottom: 34rpx;
+}
+
+.description-textarea {
+  line-height: 1.55;
+  min-height: 132rpx;
+}
+
+.picker-value {
+  color: #172033;
+  min-height: 44rpx;
+}
+
+.field-help {
+  color: #7d8ea3;
+  display: block;
+  font-size: 22rpx;
+  line-height: 1.5;
+  margin-top: 10rpx;
+}
+
+.manual-location {
+  margin-top: 14rpx;
+}
+
+.location-group {
+  margin-top: 6rpx;
+}
+
+.coord-placeholder,
+.coord-row {
+  display: grid;
+  gap: 18rpx;
+  grid-template-columns: 1fr 1fr;
+}
+
+.coord-placeholder {
+  margin-top: 22rpx;
+}
+
+.coord-empty {
+  background: #f7fbff;
+  border: 1rpx dashed #c4ddf4;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  min-height: 82rpx;
+  padding: 14rpx 18rpx;
+}
+
+.coord-pending {
+  color: #8797aa;
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.action-row {
+  align-items: stretch;
+  margin-bottom: 6rpx;
+}
+
+.notice {
+  color: #c24135;
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.5;
+  margin-top: 18rpx;
+}
+
+.panel-heading {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-filter {
+  background: #f3f8fe;
+  border: 1rpx solid #d7e8f8;
+  border-radius: 10rpx;
+  display: grid;
+  gap: 8rpx;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 18rpx 0 10rpx;
+  padding: 8rpx;
+}
+
+.filter-button {
+  background: transparent;
+  border-radius: 8rpx;
+  color: #5f7288;
+  font-size: 23rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  padding: 0 6rpx;
+}
+
+.filter-button::after {
+  border: 0;
+}
+
+.filter-button.active {
+  background: linear-gradient(135deg, #1677d2, #2f9cf4);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.incident-card {
+  border-top: 1rpx solid #e4eef8;
+  padding: 24rpx 0;
+}
+
+.tag-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-bottom: 12rpx;
+}
+
+.tag-row .tag {
+  margin-bottom: 0;
+}
+
+.type-tag {
+  background: #e6f4ff;
+  color: #1677d2;
+}
+
+.status-tag {
+  border-radius: 999rpx;
+}
+
+.status-pending {
+  background: #fff3e3;
+  color: #c96800;
+}
+
+.status-responding {
+  background: #e6f4ff;
+  color: #1677d2;
+}
+
+.status-resolved {
+  background: #eaf8ef;
+  color: #258f55;
+}
+
+.card-title {
+  font-size: 30rpx;
+  line-height: 1.45;
+  margin-bottom: 10rpx;
+}
+
+@media (max-width: 360px) {
+  .status-filter {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

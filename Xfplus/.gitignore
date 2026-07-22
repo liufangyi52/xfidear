@@ -1,0 +1,12 @@
+.env
+.env.local
+*.local
+.venv/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+backend/data/*.db
+backend/data/*.db-*
+runtime/
+*.log
