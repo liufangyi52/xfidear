@@ -1,0 +1,104 @@
+<view class="page">
+  <view class="panel report-panel">
+    <text class="eyebrow">现场上报</text>
+    <text class="section-title">{{isTourist ? '游客求助 / SOS' : '居民上报 / SOS'}}</text>
+    <text class="hint">{{isTourist ? '游客上报会进入待审核流程，SOS 将按最高优先级进入指挥处置。' : '居民可提交现场险情，SOS 会优先进入工作台处置。'}}</text>
+
+    <label class="field">
+      <text class="field-label">事件类型</text>
+      <picker range="{{typeLabels}}" value="{{typeIndex}}" bindchange="onTypeChange">
+        <view class="picker-value">{{typeLabels[typeIndex]}}</view>
+      </picker>
+    </label>
+
+    <label class="field">
+      <text class="field-label">事件描述</text>
+      <textarea class="description-textarea" value="{{form.description}}" placeholder="请选择事件类型生成模板，也可以补充人数、地点、风险和求助需求。" auto-height maxlength="-1" bindinput="onDescription" />
+    </label>
+
+    <view class="location-group">
+      <label class="field">
+        <text class="field-label">区县</text>
+        <picker range="{{districtLabels}}" value="{{districtIndex}}" bindchange="onDistrictChange">
+          <view class="picker-value">{{districtLabels[districtIndex]}}</view>
+        </picker>
+      </label>
+
+      <label class="field">
+        <text class="field-label">位置方式</text>
+        <picker range="{{locationModeLabels}}" value="{{locationModeIndex}}" bindchange="onLocationModeChange">
+          <view class="picker-value">{{locationModeLabels[locationModeIndex]}}</view>
+        </picker>
+      </label>
+
+      <label wx:if="{{locationModeIndex === 0}}" class="field">
+        <text class="field-label">{{isTourist ? '景区点位' : '村社/道路点位'}}</text>
+        <picker range="{{locationLabels}}" value="{{locationIndex}}" bindchange="onLocationChange">
+          <view class="picker-value">{{locationLabels[locationIndex]}}</view>
+        </picker>
+      </label>
+
+      <label wx:if="{{locationModeIndex !== 0}}" class="field">
+        <text class="field-label">现场位置补充（可选）</text>
+        <input value="{{form.scenic_area}}" placeholder="{{isTourist ? '如索道站、景区入口、步道方向' : '如村组、路口、屋后边坡、河沟边'}}" bindinput="onScenicArea" />
+      </label>
+    </view>
+
+    <view wx:if="{{!coordinateReady}}" class="coord-placeholder">
+      <view class="coord-empty">
+        <text class="field-label">纬度</text>
+        <text class="coord-pending">待定位</text>
+      </view>
+      <view class="coord-empty">
+        <text class="field-label">经度</text>
+        <text class="coord-pending">待定位</text>
+      </view>
+    </view>
+
+    <view wx:else class="coord-row">
+      <label class="field">
+        <text class="field-label">纬度</text>
+        <input type="digit" value="{{form.lat}}" bindinput="onLat" />
+      </label>
+      <label class="field">
+        <text class="field-label">经度</text>
+        <input type="digit" value="{{form.lng}}" bindinput="onLng" />
+      </label>
+    </view>
+
+    <view class="button-row">
+      <button class="ghost-button" bindtap="locate">定位</button>
+    </view>
+    <text wx:if="{{!backendReady}}" class="field-help">请先退出登录，在登录页点击「使用演示账号」或注册后端账号后再上报。</text>
+    <view class="button-row action-row">
+      <button class="primary-button" loading="{{reportSubmitting}}" bindtap="submitReport">提交上报</button>
+      <button class="danger-button" loading="{{sosSubmitting}}" bindtap="submitEmergency">SOS</button>
+    </view>
+    <text wx:if="{{notice}}" class="notice">{{notice}}</text>
+  </view>
+
+  <view class="panel">
+    <view class="panel-heading">
+      <view>
+        <text class="eyebrow">我的上报</text>
+        <text class="section-title">最近可见事件</text>
+      </view>
+    </view>
+
+    <view class="status-filter">
+      <button wx:for="{{statusFilters}}" wx:key="key" data-status="{{item.key}}" bindtap="setStatusFilter" class="filter-button {{activeStatus === item.key ? 'active' : ''}}">{{item.label}}</button>
+    </view>
+    <text class="field-help">处理状态由上级管理端发布，居民和游客只查看进度。</text>
+
+    <view wx:if="{{!incidents.length}}" class="empty">暂无事件记录</view>
+    <view wx:for="{{incidents}}" wx:key="id" class="incident-card">
+      <view class="tag-row">
+        <text class="tag type-tag">{{item.type_text}}</text>
+        <text class="tag status-tag status-{{item.status_class}}">{{item.status_text}}</text>
+      </view>
+      <text class="card-title">{{item.scenic_area || item.district || '现场位置'}}</text>
+      <text class="meta">{{item.description}}</text>
+      <text class="meta">{{item.created_text}}</text>
+    </view>
+  </view>
+</view>

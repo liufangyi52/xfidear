@@ -1,0 +1,38 @@
+<view class="risk-page">
+  <map
+    wx:if="{{mapReady}}"
+    class="risk-map"
+    latitude="{{center.lat}}"
+    longitude="{{center.lng}}"
+    scale="11"
+    markers="{{markers}}"
+    enable-scroll="{{true}}"
+    enable-zoom="{{true}}"
+    bindmarkertap="onMarkerTap"
+  />
+
+  <view class="risk-sheet">
+    <view class="sheet-head">
+      <view>
+        <text class="eyebrow">风险地图</text>
+        <text class="section-title">{{isTourist ? '景区风险点' : '城市风险点'}}</text>
+      </view>
+      <button class="small-button" loading="{{loading}}" bindtap="load">刷新</button>
+    </view>
+
+    <view wx:if="{{weather.summary}}" class="weather-box">
+      <text class="card-title">{{weather.summary}}</text>
+      <text class="meta">近二十四小时降雨：{{weather.rainfall_24h || '--'}} 毫米 · {{weather.source || '本地数据'}}</text>
+    </view>
+
+    <view wx:for="{{points}}" wx:key="id" class="risk-card" data-index="{{index}}" bindtap="showPoint">
+      <view>
+        <text class="tag">{{item.risk_level_text}}</text>
+        <text class="card-title">{{item.name}}</text>
+        <text class="meta">{{item.scenic_area || item.district}} · {{item.action}}</text>
+        <text class="meta">最近安置点：{{item.nearby_shelter.name}}，约 {{item.nearby_shelter.distance_km}} 公里</text>
+      </view>
+      <text class="risk-score">{{item.risk_score}}</text>
+    </view>
+  </view>
+</view>

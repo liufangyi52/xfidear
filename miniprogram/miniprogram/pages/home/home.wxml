@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="home-hero">
+    <text class="eyebrow">{{isTourist ? '游客应急平台' : '居民应急平台'}}</text>
+    <text class="title">{{isTourist ? '张家界游客应急平台' : '智瞳居民应急平台'}}</text>
+    <text class="subtitle">{{weather.summary || '正在获取张家界风险与预警数据'}}</text>
+  </view>
+
+  <view wx:if="{{loadError}}" class="notice-box">
+    <text class="notice">{{loadError}}</text>
+  </view>
+
+  <view wx:if="{{realtimeMessage.title}}" class="realtime-alert" bindtap="goMessages">
+    <view class="realtime-head">
+      <text class="realtime-tag">实时预警</text>
+      <text class="realtime-time">{{realtimeMessage.created_at}}</text>
+    </view>
+    <text class="realtime-title">{{realtimeMessage.title}}</text>
+    <text class="realtime-content">{{realtimeMessage.content}}</text>
+    <text class="realtime-note">来自上级管理端推送，点击可查看全部消息。</text>
+  </view>
+
+  <view class="panel">
+    <view class="section-head">
+      <view>
+        <text class="eyebrow">最新预警</text>
+        <text class="section-title">{{isTourist ? '游客预警提醒' : '居民预警提醒'}}</text>
+      </view>
+      <button class="small-button" bindtap="load">刷新</button>
+    </view>
+
+    <view wx:if="{{latestAlert}}" class="alert-card" bindtap="openAlert">
+      <text class="tag">{{latestAlertLevelText}}</text>
+      <text class="card-title">{{latestAlert.title}}</text>
+      <text class="meta">{{latestAlertText}}</text>
+      <text class="time">{{latestAlert.pushed_at || latestAlert.created_at}}</text>
+    </view>
+    <view wx:else class="empty">{{loadError ? '后端未连接，暂无预警' : '暂无预警，请等待上级发布'}}</view>
+  </view>
+
+  <view class="panel">
+    <text class="eyebrow">风险点位</text>
+    <text class="section-title">{{isTourist ? '景区风险提醒' : '中高风险点'}}</text>
+    <view wx:for="{{riskPoints}}" wx:key="id" class="risk-row">
+      <view>
+        <text class="card-title">{{item.name}}</text>
+        <text class="meta">{{item.action}}</text>
+      </view>
+      <text class="risk-score">{{item.risk_score}}</text>
+    </view>
+    <view wx:if="{{!riskPoints.length}}" class="empty">{{loadError ? '后端未连接' : '暂无风险点位'}}</view>
+    <button class="ghost-button" bindtap="goRisk">打开风险地图</button>
+  </view>
+</view>

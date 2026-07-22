@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "username": "city_demo",
+    "role": "city_admin",
+    "district": null,
+    "community": null,
+    "salt": "8aa479d75c5fa023",
+    "password_hash": "65e853f090cafd5405ea51f37d394616d79f3b3c4df3e75246a8f7022518f8ce"
+  },
+  {
+    "id": 2,
+    "username": "county_admin_demo",
+    "role": "county_admin",
+    "district": "武陵源区",
+    "community": null,
+    "salt": "eb74c307de168d2e",
+    "password_hash": "a63eb89b28c0a329d66968874032256c488491f071d5f55b58d4f80c45188393"
+  },
+  {
+    "id": 3,
+    "username": "community_admin_demo",
+    "role": "community_admin",
+    "district": "武陵源区",
+    "community": "标志门社区",
+    "salt": "f7ac1879ef148eef",
+    "password_hash": "9916dbf518b8b8d73e8902df27339ca56ac9494f3efde5aaf51b2129a0ff65d8"
+  },
+  {
+    "id": 4,
+    "username": "resident_demo",
+    "role": "resident",
+    "district": "武陵源区",
+    "community": null,
+    "salt": "96227c69091d5322",
+    "password_hash": "86bb1295cf24a98115a0cae377d65400b33dd785c0efcd5273caf6adfbfe93f9"
+  },
+  {
+    "id": 5,
+    "username": "tourist_demo",
+    "role": "tourist",
+    "district": "武陵源区",
+    "community": null,
+    "salt": "e203187f0ad2d223",
+    "password_hash": "bcf1091e0cf629681d5980cdc167b5954974a01f30eb7d5884ccec6d974562a8"
+  }
+]

@@ -1,0 +1,133 @@
+page {
+  background: #edf6ff;
+  color: #172033;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+}
+
+.page {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(91, 188, 255, 0.28), transparent 36%),
+    linear-gradient(180deg, #f4faff 0%, #edf6ff 46%, #f8fbff 100%);
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 28rpx;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1rpx solid #d7e8f8;
+  border-radius: 12rpx;
+  box-shadow: 0 14rpx 32rpx rgba(24, 90, 150, 0.08);
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+  padding: 28rpx;
+}
+
+.eyebrow {
+  color: #1677d2;
+  display: block;
+  font-size: 50rpx;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 8rpx;
+}
+
+.title {
+  color: #10233c;
+  display: block;
+  font-size: 40rpx;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.subtitle,
+.hint,
+.meta {
+  color: #5f7288;
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.button-row {
+  display: flex;
+  gap: 18rpx;
+  margin-top: 24rpx;
+}
+
+.primary-button,
+.ghost-button,
+.danger-button {
+  align-items: center;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  font-size: 28rpx;
+  height: 84rpx;
+  justify-content: center;
+  line-height: 84rpx;
+  padding: 0 20rpx;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #1677d2, #2f9cf4);
+  color: #ffffff;
+}
+
+.ghost-button {
+  background: #e8f4ff;
+  color: #1677d2;
+}
+
+.danger-button {
+  background: #d84a1b;
+  color: #ffffff;
+}
+
+.field {
+  display: block;
+  margin-top: 22rpx;
+}
+
+.field-label {
+  color: #2d4056;
+  display: block;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+input,
+textarea,
+picker {
+  background: #f7fbff;
+  border: 1rpx solid #d5e6f5;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  color: #172033;
+  min-height: 82rpx;
+  padding: 18rpx;
+  width: 100%;
+}
+
+textarea {
+  min-height: 180rpx;
+}
+
+.tag {
+  background: #e6f4ff;
+  border-radius: 999rpx;
+  color: #1677d2;
+  display: inline-flex;
+  font-size: 22rpx;
+  font-weight: 700;
+  margin-bottom: 12rpx;
+  padding: 8rpx 16rpx;
+}
+
+.empty {
+  color: #7d8ea3;
+  padding: 36rpx 0;
+  text-align: center;
+}

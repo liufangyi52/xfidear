@@ -1,0 +1,24 @@
+.section-title {
+  color: #10233c;
+  display: block;
+  font-size: 32rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx;
+}
+
+.action-button {
+  margin-top: 24rpx;
+}
+
+.account-row {
+  border-top: 1rpx solid #e4eef8;
+  padding: 22rpx 0;
+}
+
+.account-name {
+  color: #10233c;
+  display: block;
+  font-size: 28rpx;
+  font-weight: 800;
+  margin-bottom: 8rpx;
+}
