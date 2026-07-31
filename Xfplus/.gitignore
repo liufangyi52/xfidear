@@ -10,3 +10,4 @@ backend/data/*.db
 backend/data/*.db-*
 runtime/
 *.log
+.worktrees/
