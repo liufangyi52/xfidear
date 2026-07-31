@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm --prefix Xfplus/frontend ci && npm --prefix Xfplus/frontend run build",
+  "outputDirectory": "Xfplus/frontend/dist",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": ["Xfplus/backend/data/**"]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
