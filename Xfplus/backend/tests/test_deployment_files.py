@@ -27,3 +27,15 @@ class DeploymentFilesTests(unittest.TestCase):
             "SQLite",
         ):
             self.assertIn(expected, guide)
+
+    def test_root_vercel_config_builds_frontend_and_routes_api_first(self):
+        config = json.loads((REPOSITORY_ROOT / "vercel.json").read_text(encoding="utf-8"))
+        self.assertEqual(config["outputDirectory"], "Xfplus/frontend/dist")
+        self.assertEqual(config["rewrites"][0], {"source": "/api/(.*)", "destination": "/api/index.py"})
+        self.assertEqual(config["rewrites"][1], {"source": "/(.*)", "destination": "/index.html"})
+
+    def test_vercel_only_guide_documents_data_reset_and_same_origin_api(self):
+        guide = (ROOT / "docs" / "DEPLOY_VERCEL_SERVERLESS.md").read_text(encoding="utf-8")
+        self.assertIn("/tmp", guide)
+        self.assertIn("VITE_API_BASE_URL", guide)
+        self.assertIn("city_demo / 123456", guide)
